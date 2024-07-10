@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class DailyOrder extends Model
 {
+    protected $table = 'orders';
+
     private int $day;
     private float $total;
     private int $quantity;
