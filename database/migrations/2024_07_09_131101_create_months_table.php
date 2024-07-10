@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('months', function (Blueprint $table) {
             $table->unsignedTinyInteger('id')->autoIncrement()->primary();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->datetimes();
             $table->charset('utf8mb4');
             $table->collation('utf8mb4_0900_ai_ci');
