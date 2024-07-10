@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id')->primary();
             $table->unsignedTinyInteger('year');
             $table->decimal('remain', 10, 2)->unsigned();
+            $table->enum('status', ['overdue', 'pending', 'installments', 'paid']);
             $table->foreignIdFor(Month::class);
             $table->foreignIdFor(Product::class);
             $table->datetimes();
