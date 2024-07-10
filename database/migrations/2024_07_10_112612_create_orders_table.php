@@ -22,6 +22,12 @@ return new class extends Migration
             $table->charset('utf8mb4');
             $table->collation('utf8mb4_0900_ai_ci');
         });
+
+        Schema::create('daily_orders', function (Blueprint $table) {
+            $table->bigIncrements('id')->primary();
+            $table->bigIncrements('monthly_order_id');
+            $table->bigIncrements('order_id');
+        });
     }
 
     /**
@@ -30,5 +36,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('orders');
+        Schema::dropIfExists('daily_orders');
     }
 };
