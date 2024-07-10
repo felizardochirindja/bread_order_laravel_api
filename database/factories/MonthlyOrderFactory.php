@@ -21,7 +21,7 @@ class MonthlyOrderFactory extends Factory
         return [
             'year' => fake()->year(),
             'month' => Month::factory(),
-            'remain' => fake()->numberBetween(0, 1500),
+            'remain' => fake()->randomFloat(2, 0, 1500),
             'status' => fake()->randomElement(['overdue', 'pending', 'installments', 'paid']),
             'product' => Product::factory(),
         ];

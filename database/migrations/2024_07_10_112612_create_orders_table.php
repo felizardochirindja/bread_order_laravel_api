@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\DailyOrder;
+use App\Models\MonthlyOrder;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -25,8 +27,8 @@ return new class extends Migration
 
         Schema::create('daily_orders', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
-            $table->bigIncrements('monthly_order_id');
-            $table->bigIncrements('order_id');
+            $table->foreignIdFor(MonthlyOrder::class);
+            $table->foreignIdFor(DailyOrder::class, 'order_id');
         });
     }
 
