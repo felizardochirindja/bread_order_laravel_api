@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('months', function (Blueprint $table) {
-            $table->tinyInteger('id')->autoIncrement()->primary();
+            $table->unsignedTinyInteger('id')->autoIncrement()->primary();
             $table->string('name');
             $table->datetimes();
             $table->charset('utf8mb4');

@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->charset('utf8mb4');
-            $table->collation('utf8mb4_0900_ai_ci');
             $table->bigIncrements('id')->primary();
             $table->string('name', 100)->nullable(false)->unique()->index();
-            $table->decimal('price', 10, 2)->nullable(false);
+            $table->decimal('price', 10, 2)->unsigned()->nullable(false);
             $table->string('description')->nullable(false);
             $table->datetimes();
+            $table->charset('utf8mb4');
+            $table->collation('utf8mb4_0900_ai_ci');
         });
     }
 
