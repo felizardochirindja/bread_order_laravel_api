@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    public string $id;
-    public string $name;
-    public float $price;
-    public string $description;
-    public DateTimeImmutable $createdAt;
-    public DateTime $updatedAt;
+    private string $id;
+    private string $name;
+    private float $price;
+    private string $description;
+    private DateTimeImmutable $createdAt;
+    private DateTime $updatedAt;
 
     use HasFactory;
 }

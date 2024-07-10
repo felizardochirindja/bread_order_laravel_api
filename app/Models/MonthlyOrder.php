@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class MonthlyOrder extends Model
 {
-    public string $id;
-    public int $year;
-    public Month $month;
-    public float $remain;
-    public MonthlyOrderStatus $status;
-    public Product $product;
+    private string $id;
+    private int $year;
+    private Month $month;
+    private float $remain;
+    private MonthlyOrderStatus $status;
+    private Product $product;
 
     use HasFactory;
 }

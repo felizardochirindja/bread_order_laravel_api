@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Month extends Model
 {
-    public string $id;
-    public string $name;
+    private string $id;
+    private string $name;
     
     use HasFactory;
 }
