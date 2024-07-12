@@ -27,8 +27,8 @@ return new class extends Migration
 
         Schema::create('daily_orders', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
-            $table->foreignIdFor(MonthlyOrder::class);
-            $table->foreignIdFor(DailyOrder::class, 'order_id');
+            $table->foreignIdFor(MonthlyOrder::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(DailyOrder::class, 'order_id')->constrained()->cascadeOnDelete();
         });
     }
 
