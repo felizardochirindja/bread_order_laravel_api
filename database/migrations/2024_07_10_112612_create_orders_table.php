@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedTinyInteger('quantity');
             $table->decimal('product_price', 10, 2)->unsigned();
             $table->string('notes');
+            $table->unsignedTinyInteger('day');
             $table->enum('status', ['overdue', 'pending', 'paid']);
             $table->datetimes();
             $table->charset('utf8mb4');
