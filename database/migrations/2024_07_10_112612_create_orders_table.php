@@ -30,6 +30,8 @@ return new class extends Migration
             $table->bigIncrements('id')->primary();
             $table->foreignIdFor(MonthlyOrder::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(DailyOrder::class, 'order_id')->constrained()->cascadeOnDelete();
+            $table->charset('utf8mb4');
+            $table->collation('utf8mb4_0900_ai_ci');
         });
     }
 
