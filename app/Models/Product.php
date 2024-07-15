@@ -17,4 +17,9 @@ class Product extends Model
     private DateTime $updatedAt;
 
     use HasFactory;
+
+    public function monthlyOrders()
+    {
+        return $this->hasMany(MonthlyOrder::class);
+    }
 }

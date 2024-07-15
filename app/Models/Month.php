@@ -11,4 +11,9 @@ class Month extends Model
     private string $name;
     
     use HasFactory;
+
+    public function monthlyOrders()
+    {
+        return $this->hasMany(MonthlyOrder::class);
+    }
 }

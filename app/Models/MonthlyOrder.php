@@ -15,6 +15,16 @@ class MonthlyOrder extends Model
     private Product $product;
 
     use HasFactory;
+
+    public function month()
+    {
+        return $this->belongsTo(Month::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
 
 enum MonthlyOrderStatus: string
