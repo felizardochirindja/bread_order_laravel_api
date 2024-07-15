@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('monthly_orders', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
-            $table->unsignedTinyInteger('year');
+            $table->unsignedSmallInteger('year');
             $table->decimal('remain', 10, 2)->unsigned();
             $table->enum('status', ['overdue', 'pending', 'installments', 'paid']);
             $table->foreignIdFor(Month::class);
