@@ -17,7 +17,7 @@ class MonthFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->monthName(),
+            'name' => fake()->unique()->monthName(),
         ];
     }
 }

@@ -20,10 +20,10 @@ class MonthlyOrderFactory extends Factory
     {
         return [
             'year' => fake()->year(),
-            'month' => Month::factory(),
+            'month_id' => Month::factory(),
             'remain' => fake()->randomFloat(2, 0, 1500),
             'status' => fake()->randomElement(['overdue', 'pending', 'installments', 'paid']),
-            'product' => Product::factory(),
+            'product_id' => Product::factory(),
         ];
     }
 }
