@@ -25,6 +25,11 @@ class MonthlyOrder extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function dailyOrders()
+    {
+        return $this->belongsToMany(DailyOrder::class, 'daily_orders', relatedPivotKey: 'order_id');
+    }
 }
 
 enum MonthlyOrderStatus: string

@@ -17,6 +17,11 @@ class DailyOrder extends Model
     private OrderStatus $status;
 
     use HasFactory;
+
+    public function monthlyOrder()
+    {
+        return $this->belongsToMany(MonthlyOrder::class, 'daily_orders', 'order_id')->first();
+    }
 }
 
 enum OrderStatus: string
