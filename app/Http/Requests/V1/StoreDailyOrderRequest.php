@@ -29,6 +29,7 @@ class StoreDailyOrderRequest extends FormRequest
             'productPrice' => ['required'],
             'notes' => ['required'],
             'status' => ['required', Rule::in(['overdue', 'pending', 'paid'])],
+            "monthly_order_id" => ['required', 'numeric', 'gt:0']
         ];
     }
 
