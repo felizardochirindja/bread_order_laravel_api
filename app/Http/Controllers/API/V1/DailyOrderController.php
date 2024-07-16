@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\StoreDailyOrderRequest;
+use App\Http\Requests\V1\UpdateDailyOrderRequest;
 use App\Http\Resources\V1\DailyOrderCollection;
 use App\Http\Resources\V1\DailyOrderResource;
 use App\Models\DailyOrder;
@@ -20,10 +21,17 @@ class DailyOrderController extends Controller
         return new DailyOrderResource($dailyOrder);
     }
 
-    // create a daily order
     public function store(StoreDailyOrderRequest $request)
     {
         $dailyOrder = DailyOrder::create($request->all());
         return new DailyOrderResource($dailyOrder);
+    }
+
+    public function update(UpdateDailyOrderRequest $request, $id)
+    {
+        $dailyOrder = DailyOrder::findOrFail($id);
+        $dailyOrder->update($request->all());
+
+        return response()->json($dailyOrder, 200);
     }
 }
