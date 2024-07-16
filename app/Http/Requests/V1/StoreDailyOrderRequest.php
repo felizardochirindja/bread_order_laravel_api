@@ -24,7 +24,7 @@ class StoreDailyOrderRequest extends FormRequest
     {
         return [
             'day' => ['required'],
-            'total' => ['required'],
+            'total' => ['required', 'numeric'],
             'quantity' => ['required', 'numeric'],
             'productPrice' => ['required'],
             'notes' => ['required'],
