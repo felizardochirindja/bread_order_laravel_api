@@ -6,6 +6,7 @@ use DateTime;
 use DateTimeImmutable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
@@ -18,7 +19,7 @@ class Product extends Model
 
     use HasFactory;
 
-    public function monthlyOrders()
+    public function monthlyOrders(): HasMany
     {
         return $this->hasMany(MonthlyOrder::class);
     }

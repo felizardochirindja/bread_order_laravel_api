@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class DailyOrder extends Model
 {
@@ -18,7 +19,7 @@ class DailyOrder extends Model
 
     use HasFactory;
 
-    public function monthlyOrder()
+    public function monthlyOrder(): BelongsToMany
     {
         return $this->belongsToMany(MonthlyOrder::class, 'daily_orders', 'order_id')->first();
     }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Month extends Model
 {
@@ -12,7 +13,7 @@ class Month extends Model
     
     use HasFactory;
 
-    public function monthlyOrders()
+    public function monthlyOrders(): HasMany
     {
         return $this->hasMany(MonthlyOrder::class);
     }
