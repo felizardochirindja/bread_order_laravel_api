@@ -30,7 +30,7 @@ class DailyOrder extends Model
 
     public function monthlyOrder(): BelongsToMany
     {
-        return $this->belongsToMany(MonthlyOrder::class, 'daily_orders', 'order_id')->first();
+        return $this->belongsToMany(MonthlyOrder::class, 'daily_orders', 'order_id');
     }
 }
 
