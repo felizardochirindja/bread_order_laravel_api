@@ -2,6 +2,7 @@
 
 use App\Models\Month;
 use App\Models\Product;
+use App\Models\Types\MonthlyOrderStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,7 +18,7 @@ return new class extends Migration
             $table->bigIncrements('id')->primary();
             $table->unsignedSmallInteger('year');
             $table->decimal('remain', 10, 2)->unsigned();
-            $table->enum('status', ['overdue', 'pending', 'installments', 'paid']);
+            $table->enum('status', array_column(MonthlyOrderStatus::cases(), 'value'))->default(MonthlyOrderStatus::PENDING);
             $table->foreignIdFor(Month::class);
             $table->foreignIdFor(Product::class);
             $table->datetimes();

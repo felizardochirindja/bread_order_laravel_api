@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Payment;
+use App\Models\Types\PaymentType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id')->primary();
             $table->decimal('total', 10, 2)->nullable(false);
             $table->dateTime('paid_at')->nullable(false);
-            $table->enum('type', ['periodic', 'daily'])->nullable(false);
+            $table->enum('type', array_column(PaymentType::cases(), 'value'))->default(PaymentType::PERIOIC)->nullable(false);
             $table->string('notes');
             $table->datetimes();
             $table->charset('utf8mb4');

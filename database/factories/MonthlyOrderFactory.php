@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Month;
 use App\Models\Product;
+use App\Models\Types\MonthlyOrderStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,7 +23,7 @@ class MonthlyOrderFactory extends Factory
             'year' => fake()->year(),
             'month_id' => Month::factory(),
             'remain' => fake()->randomFloat(2, 0, 1500),
-            'status' => fake()->randomElement(['overdue', 'pending', 'installments', 'paid']),
+            'status' => fake()->randomElement(MonthlyOrderStatus::cases()),
             'product_id' => Product::factory(),
         ];
     }

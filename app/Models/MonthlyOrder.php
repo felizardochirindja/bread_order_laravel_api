@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Types\MonthlyOrderStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -32,12 +33,4 @@ class MonthlyOrder extends Model
     {
         return $this->belongsToMany(DailyOrder::class, 'daily_orders', relatedPivotKey: 'order_id');
     }
-}
-
-enum MonthlyOrderStatus: string
-{
-    case OVERDUE = 'overdue';
-    case PENDING = 'pending';
-    case INSTALLMENTS = 'installments';
-    case PAID = 'paid';
 }

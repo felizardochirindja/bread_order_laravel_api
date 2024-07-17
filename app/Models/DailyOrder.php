@@ -20,10 +20,6 @@ class DailyOrder extends Model
         'status',
     ];
 
-    protected $casts = [
-        'status' => DailyOrderStatus::class
-    ];
-
     private int $day;
     private float $total;
     private int $quantity;

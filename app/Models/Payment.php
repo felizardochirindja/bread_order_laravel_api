@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Types\PaymentType;
 use DateTimeImmutable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,11 +16,4 @@ class Payment extends Model
     private string $notes;
 
     use HasFactory;
-}
-
-
-enum PaymentType: string
-{
-    case PERIOIC = 'periodic';
-    case DAILY = 'daily';
 }

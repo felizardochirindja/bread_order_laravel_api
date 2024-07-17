@@ -52,8 +52,31 @@ class DailyOrderController extends Controller
         return new StoreDailyOrderResource($dailyOrder);
     }
 
-    public function placeImmediatePaymentOrder()
+    public function placeImmediatePaymentOrder(Request $request)
     {
+        $product = Product::findOrFail($request->productId);
+        $monthlyOrder = MonthlyOrder::findOrFail($request->monthlyOrderId);
+
+        $quantity = (int) $request->quantity;
+        $total = $product->price * $quantity;
+        $day = (new DateTime())->format('d');
+
+        $dailyOrder = [
+            'day' => $day,
+            'total' => $total,
+            'quantity' => $quantity,
+            'product_price' => $product->price,
+            'notes' => $request->notes,
+            'status' => DailyOrderStatus::PAID,
+        ];
+
+        $dailyOrder = DailyOrder::create($dailyOrder);
+        $dailyOrder->monthlyOrder()->attach($monthlyOrder->id);
+
+        // find daily orders id where monlty order id = x and order id  = y
+        // associate this id with the order payments
+
+        return new StoreDailyOrderResource($dailyOrder);
     }
 
     public function update(UpdateDailyOrderRequest $request, $id)

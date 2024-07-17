@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Types\PaymentType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,7 +20,7 @@ class PaymentFactory extends Factory
         return [
             'total' => fake()->randomFloat(2, 9, 1500),
             'paid_at' => fake()->dateTime(),
-            'type' => fake()->randomElement(['periodic', 'daily']),
+            'type' => fake()->randomElement(PaymentType::cases()),
             'notes' => fake()->paragraph(1),
         ];
     }
