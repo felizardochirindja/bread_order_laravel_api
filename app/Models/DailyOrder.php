@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Types\DailyOrderStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -19,12 +20,16 @@ class DailyOrder extends Model
         'status',
     ];
 
+    protected $casts = [
+        'status' => DailyOrderStatus::class
+    ];
+
     private int $day;
     private float $total;
     private int $quantity;
     private float $productPrice;
     private string $notes;
-    private OrderStatus $status;
+    private DailyOrderStatus $status;
 
     use HasFactory;
 
@@ -32,11 +37,4 @@ class DailyOrder extends Model
     {
         return $this->belongsToMany(MonthlyOrder::class, 'daily_orders', 'order_id');
     }
-}
-
-enum OrderStatus: string
-{
-    case OVERDUE = 'overdue';
-    case PENDING = 'pending';
-    case PAID = 'paid';
 }

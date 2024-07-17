@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Types\DailyOrderStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,7 +23,7 @@ class DailyOrderFactory extends Factory
             'quantity' => fake()->numberBetween(1, 10),
             'product_price' => fake()->randomFloat(2, 9, 12),
             'notes' => fake()->paragraph(),
-            'status' => fake()->randomElement(['overdue', 'pending', 'paid']),
+            'status' => fake()->randomElement(DailyOrderStatus::cases()),
         ];
     }
 }

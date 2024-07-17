@@ -12,7 +12,9 @@ use App\Http\Resources\V1\UpdateDailyOrderResource;
 use App\Models\DailyOrder;
 use App\Models\MonthlyOrder;
 use App\Models\Product;
+use App\Models\Types\DailyOrderStatus;
 use DateTime;
+use Illuminate\Http\Request;
 
 class DailyOrderController extends Controller
 {
@@ -41,7 +43,7 @@ class DailyOrderController extends Controller
             'quantity' => $quantity,
             'product_price' => $product->price,
             'notes' => $request->notes,
-            'status' => 'pending',
+            'status' => DailyOrderStatus::PENDING,
         ];
 
         $dailyOrder = DailyOrder::create($dailyOrder);
@@ -52,7 +54,6 @@ class DailyOrderController extends Controller
 
     public function placeImmediatePaymentOrder()
     {
-        
     }
 
     public function update(UpdateDailyOrderRequest $request, $id)
