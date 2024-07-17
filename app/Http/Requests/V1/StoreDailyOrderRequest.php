@@ -3,7 +3,6 @@
 namespace App\Http\Requests\V1;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class StoreDailyOrderRequest extends FormRequest
 {
@@ -23,20 +22,10 @@ class StoreDailyOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'day' => ['required'],
-            'total' => ['required', 'numeric'],
+            'productId' => ['required', 'numeric', 'gt:0'],
             'quantity' => ['required', 'numeric'],
-            'productPrice' => ['required'],
             'notes' => ['required'],
-            'status' => ['required', Rule::in(['overdue', 'pending', 'paid'])],
-            "monthly_order_id" => ['required', 'numeric', 'gt:0']
+            "monthlyOrderId" => ['required', 'numeric', 'gt:0']
         ];
-    }
-
-    protected function prepareForValidation()
-    {
-        $this->merge([
-            'product_price' => $this->productPrice,
-        ]);
     }
 }
