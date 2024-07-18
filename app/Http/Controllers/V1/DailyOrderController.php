@@ -5,7 +5,7 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\StoreDailyOrderRequest;
 use App\Http\Requests\V1\UpdateDailyOrderRequest;
-use App\Http\Resources\V1\ListDailyOrderResource;
+use App\Http\Resources\V1\ListDailyOrdersResource;
 use App\Http\Resources\V1\ShowDailyOrderResource;
 use App\Http\Resources\V1\StoreDailyOrderResource;
 use App\Http\Resources\V1\UpdateDailyOrderResource;
@@ -20,7 +20,7 @@ class DailyOrderController extends Controller
 {
     public function index()
     {
-        return new ListDailyOrderResource(DailyOrder::paginate());
+        return new ListDailyOrdersResource(DailyOrder::paginate());
     }
 
     public function show(DailyOrder $dailyOrder)
