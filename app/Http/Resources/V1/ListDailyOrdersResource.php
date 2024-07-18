@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\V1;
 
+use App\Models\DailyOrder;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
@@ -16,17 +17,9 @@ class ListDailyOrdersResource extends ResourceCollection
     {
         return [
             'status' => 'OK',
-            'message' => 'data read successfully',
-            'data' => $this->collection->transform(function($dailyOrder) {
-                return [
-                    'id' => $dailyOrder->id,
-                    'total' => $dailyOrder->total,
-                    'quantity' => $dailyOrder->quantity,
-                    'productPrice' => $dailyOrder->product_price,
-                    'notes' => $dailyOrder->notes,
-                    'day' => $dailyOrder->day,
-                    'status' => $dailyOrder->status,
-                ];
+            'message' => 'daily orders read successfully',
+            'data' => $this->collection->transform(function (DailyOrder $dailyOrder) {
+                return new ShowDailyOrderResource($dailyOrder);
             }),
         ];
     }

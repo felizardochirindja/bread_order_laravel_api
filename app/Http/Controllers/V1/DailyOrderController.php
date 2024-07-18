@@ -7,8 +7,6 @@ use App\Http\Requests\V1\StoreDailyOrderRequest;
 use App\Http\Requests\V1\UpdateDailyOrderRequest;
 use App\Http\Resources\V1\ListDailyOrdersResource;
 use App\Http\Resources\V1\ShowDailyOrderResource;
-use App\Http\Resources\V1\StoreDailyOrderResource;
-use App\Http\Resources\V1\UpdateDailyOrderResource;
 use App\Models\DailyOrder;
 use App\Models\MonthlyOrder;
 use App\Models\Product;
@@ -25,7 +23,11 @@ class DailyOrderController extends Controller
 
     public function show(DailyOrder $dailyOrder)
     {
-        return new ShowDailyOrderResource($dailyOrder);
+        return response([
+            'status' => 'OK',
+            'message' => 'daily order read successfully',
+            'data' => new ShowDailyOrderResource($dailyOrder),
+        ]);
     }
 
     public function store(StoreDailyOrderRequest $request)
@@ -49,7 +51,11 @@ class DailyOrderController extends Controller
         $dailyOrder = DailyOrder::create($dailyOrder);
         $dailyOrder->monthlyOrder()->attach($monthlyOrder->id);
 
-        return new StoreDailyOrderResource($dailyOrder);
+        return response([
+            'status' => 'OK',
+            'message' => 'daily order created successfully',
+            'data' => new ShowDailyOrderResource($dailyOrder),
+        ]);
     }
 
     public function storeImmediatePaymentOrder(Request $request)
@@ -76,7 +82,7 @@ class DailyOrderController extends Controller
         // find daily orders id where monlty order id = x and order id  = y
         // associate this id with the order payments
 
-        return new StoreDailyOrderResource($dailyOrder);
+        return new ShowDailyOrderResource($dailyOrder);
     }
 
     public function update(UpdateDailyOrderRequest $request, $id)
@@ -84,6 +90,10 @@ class DailyOrderController extends Controller
         $dailyOrder = DailyOrder::findOrFail($id);
         $dailyOrder->update($request->all());
 
-        return new UpdateDailyOrderResource($dailyOrder);
+        return response([
+            'status' => 'OK',
+            'message' => 'daily order updated successfully',
+            'data' => new ShowDailyOrderResource($dailyOrder),
+        ]);
     }
 }
