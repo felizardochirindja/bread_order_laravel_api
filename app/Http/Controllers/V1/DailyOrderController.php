@@ -52,7 +52,7 @@ class DailyOrderController extends Controller
         return new StoreDailyOrderResource($dailyOrder);
     }
 
-    public function placeImmediatePaymentOrder(Request $request)
+    public function storeImmediatePaymentOrder(Request $request)
     {
         $product = Product::findOrFail($request->productId);
         $monthlyOrder = MonthlyOrder::findOrFail($request->monthlyOrderId);
