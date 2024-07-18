@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Month extends Model
 {
-    private string $id;
-    private string $name;
-    
     use HasFactory;
 
     public function monthlyOrders(): HasMany
