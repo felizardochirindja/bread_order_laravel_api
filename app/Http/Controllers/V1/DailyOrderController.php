@@ -82,7 +82,11 @@ class DailyOrderController extends Controller
         // find daily orders id where monlty order id = x and order id  = y
         // associate this id with the order payments
 
-        return new ShowDailyOrderResource($dailyOrder);
+        return response([
+            'status' => 'OK',
+            'message' => 'daily order created successfully',
+            'data' => new ShowDailyOrderResource($dailyOrder),
+        ]);
     }
 
     public function update(UpdateDailyOrderRequest $request, $id)

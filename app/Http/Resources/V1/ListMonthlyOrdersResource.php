@@ -19,7 +19,7 @@ class ListMonthlyOrdersResource extends ResourceCollection
             'status' => 'OK',
             'message' => 'monthly orders read successfully',
             'data' => $this->collection->transform(function(MonthlyOrder $monthlyOrder) {
-                return new MonthlyOrderBaseResource($monthlyOrder);
+                return new ShowMonthlyOrderResource($monthlyOrder);
             }),
         ];
     }

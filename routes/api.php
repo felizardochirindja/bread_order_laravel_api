@@ -12,4 +12,5 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
 
     Route::get('monthly-orders', [MonthlyOrderController::class, 'index']);
     Route::get('monthly-orders/{id}', [MonthlyOrderController::class, 'show']);
+    Route::get('monthly-orders/{id}/daily-orders', [MonthlyOrderController::class, 'showDailyOrders']);
 });

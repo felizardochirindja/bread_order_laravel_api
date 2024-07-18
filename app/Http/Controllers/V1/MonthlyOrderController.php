@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\ListDailyOrdersResource;
 use App\Http\Resources\V1\ListMonthlyOrdersResource;
-use App\Http\Resources\V1\MonthlyOrderBaseResource;
+use App\Http\Resources\V1\ShowMonthlyOrderResource;
 use App\Models\MonthlyOrder;
 
 class MonthlyOrderController extends Controller
@@ -21,7 +22,14 @@ class MonthlyOrderController extends Controller
         return [
             'status' => 'OK',
             'message' => 'monthly order read successfully',
-            'data' => new MonthlyOrderBaseResource($monthlyOrder),
+            'data' => new ShowMonthlyOrderResource($monthlyOrder),
         ];
+    }
+
+    public function showDailyOrders(string $monthlyOrderId)
+    {
+        $monthlyOrder = MonthlyOrder::findOrFail($monthlyOrderId);
+        $dailyOrders = $monthlyOrder->dailyOrders()->paginate();
+        return new ListDailyOrdersResource($dailyOrders);
     }
 }
