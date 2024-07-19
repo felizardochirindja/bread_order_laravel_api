@@ -26,7 +26,7 @@ class MonthlyOrderController extends Controller
         ];
     }
 
-    public function showDailyOrders(string $monthlyOrderId)
+    public function listDailyOrders(string $monthlyOrderId)
     {
         $monthlyOrder = MonthlyOrder::findOrFail($monthlyOrderId);
         $dailyOrders = $monthlyOrder->dailyOrders()->paginate();

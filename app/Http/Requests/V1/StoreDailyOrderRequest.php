@@ -25,7 +25,6 @@ class StoreDailyOrderRequest extends FormRequest
             'productId' => ['required', 'numeric', 'gt:0'],
             'quantity' => ['required', 'numeric'],
             'notes' => ['required'],
-            "monthlyOrderId" => ['required', 'numeric', 'gt:0']
         ];
     }
 }

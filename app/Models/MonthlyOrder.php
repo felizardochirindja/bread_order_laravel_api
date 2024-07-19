@@ -11,6 +11,15 @@ class MonthlyOrder extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'year',
+        'month_id',
+        'total',
+        'remain',
+        'status',
+        'product_id',
+    ];
+
     public function month(): BelongsTo
     {
         return $this->belongsTo(Month::class);

@@ -18,6 +18,7 @@ class MonthFactory extends Factory
     {
         return [
             'name' => fake()->unique()->monthName(),
+            'position' =>fake()->unique()->numberBetween(1, 12),  
         ];
     }
 }

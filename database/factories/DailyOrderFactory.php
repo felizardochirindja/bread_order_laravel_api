@@ -22,7 +22,7 @@ class DailyOrderFactory extends Factory
             'total' => fake()->randomFloat(2, 9, 100),
             'quantity' => fake()->numberBetween(1, 10),
             'product_price' => fake()->randomFloat(2, 9, 12),
-            'notes' => fake()->paragraph(),
+            'notes' => fake()->paragraph(1),
             'status' => fake()->randomElement(DailyOrderStatus::cases()),
         ];
     }

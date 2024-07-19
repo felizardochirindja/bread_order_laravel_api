@@ -18,7 +18,7 @@ class ShowDailyOrderResource extends JsonResource
             'id' => $this->id,
             'total' => $this->total,
             'quantity' => $this->quantity,
-            'productPrice' => $this->product_price,
+            'productPrice' => (float) $this->product_price,
             'notes' => $this->notes,
             'day' => $this->day,
             'status' => $this->status,

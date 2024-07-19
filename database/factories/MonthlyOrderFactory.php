@@ -22,6 +22,7 @@ class MonthlyOrderFactory extends Factory
         return [
             'year' => fake()->year(),
             'month_id' => Month::factory(),
+            'total' => fake()->randomFloat(2, 0, 1500),
             'remain' => fake()->randomFloat(2, 0, 1500),
             'status' => fake()->randomElement(MonthlyOrderStatus::cases()),
             'product_id' => Product::factory(),

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\DailyOrder;
+use App\Models\Month;
 use App\Models\MonthlyOrder;
 use App\Models\Payment;
 use App\Models\Product;
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Product::factory(1)->create();
+        Month::factory(11)->create();
         MonthlyOrder::factory(1)->create();
         DailyOrder::factory(5)->create();
         Payment::factory(2)->create();

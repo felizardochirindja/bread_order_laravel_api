@@ -17,7 +17,8 @@ class ShowMonthlyOrderResource extends JsonResource
         return [
             'id' => $this->id,
             'year' => $this->year,
-            'remain' => $this->remain,
+            'total' => (float) $this->total,
+            'remain' => (float) $this->remain,
             'status' => $this->status,
             'month' => [
                 'id' => $this->month->id,
@@ -26,7 +27,7 @@ class ShowMonthlyOrderResource extends JsonResource
             'product' => [
                 "id" => $this->product->id,
                 "name" => $this->product->name,
-                "price" => $this->product->price,
+                "price" => (float) $this->product->price,
                 "description" => $this->product->description,
             ],
         ];
