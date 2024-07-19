@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->decimal('total', 10, 2)->nullable(false);
-            $table->dateTime('paid_at')->nullable(false);
+            $table->date('paid_at')->nullable(false);
             $table->enum('type', array_column(PaymentType::cases(), 'value'))->default(PaymentType::PERIOIC)->nullable(false);
             $table->string('notes');
             $table->datetimes();

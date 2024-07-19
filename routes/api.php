@@ -9,6 +9,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], funct
         Route::apiResource('', DailyOrderController::class)->except([
             'update'
         ]);
+        Route::post('imediate-payment', [DailyOrderController::class, 'storeImmediatePaymentOrder']);
         Route::put('{id}', [DailyOrderController::class, 'update']);
     });
 

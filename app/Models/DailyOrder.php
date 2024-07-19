@@ -16,6 +16,7 @@ class DailyOrder extends Model
         'product_price',
         'notes',
         'status',
+        'monthly_order_id',
     ];
 
     use HasFactory;

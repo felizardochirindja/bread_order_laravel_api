@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\MonthlyOrder;
 use App\Models\Types\DailyOrderStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 

@@ -10,6 +10,13 @@ class Payment extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'total',
+        'paid_at',
+        'type',
+        'notes',
+    ];
+
     public function dailyOrders(): BelongsToMany
     {
         return $this->belongsToMany(DailyOrder::class, 'order_payments');
