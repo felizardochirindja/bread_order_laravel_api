@@ -3,7 +3,6 @@
 namespace App\Http\Requests\V1;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class UpdateDailyOrderRequest extends FormRequest
 {
@@ -24,31 +23,14 @@ class UpdateDailyOrderRequest extends FormRequest
     {
         if ($this->method() == 'PUT') {
             return [
-                'day' => ['required'],
-                'total' => ['required', 'numeric'],
                 'quantity' => ['required', 'numeric'],
-                'productPrice' => ['required'],
                 'notes' => ['required'],
-                'status' => ['required', Rule::in(['overdue', 'pending', 'paid'])],
             ];
         }
 
         return [
-            'day' => ['sometimes', 'required'],
-            'total' => ['sometimes', 'required', 'numeric'],
             'quantity' => ['sometimes', 'required', 'numeric'],
-            'productPrice' => ['sometimes', 'required'],
             'notes' => ['sometimes', 'required'],
-            'status' => ['sometimes', 'required', Rule::in(['overdue', 'pending', 'paid'])],
         ];
-    }
-
-    protected function prepareForValidation()
-    {
-        if ($this->productPrice) {
-            $this->merge([
-                'product_price' => $this->productPrice,
-            ]);
-        }
     }
 }

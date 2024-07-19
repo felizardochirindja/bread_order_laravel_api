@@ -16,7 +16,6 @@ use App\Models\Types\DailyOrderStatus;
 use App\Models\Types\MonthlyOrderStatus;
 use App\Models\Types\PaymentType;
 use DateTime;
-use Illuminate\Http\Request;
 
 class DailyOrderController extends Controller
 {
@@ -88,7 +87,7 @@ class DailyOrderController extends Controller
         ]);
     }
 
-    public function storeImmediatePaymentOrder(Request $request)
+    public function storeImmediatePaymentOrder(StoreDailyOrderRequest $request)
     {
         $product = Product::findOrFail($request->productId);
 
