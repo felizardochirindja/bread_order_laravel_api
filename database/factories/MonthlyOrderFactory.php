@@ -24,7 +24,7 @@ class MonthlyOrderFactory extends Factory
             'month_id' => Month::factory(),
             'total' => fake()->randomFloat(2, 0, 1500),
             'remain' => fake()->randomFloat(2, 0, 1500),
-            'status' => fake()->randomElement(MonthlyOrderStatus::cases()),
+            'status' => MonthlyOrderStatus::PENDING,
             'product_id' => Product::factory(),
         ];
     }

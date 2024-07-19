@@ -24,8 +24,8 @@ class DailyOrderFactory extends Factory
             'quantity' => fake()->numberBetween(1, 10),
             'product_price' => fake()->randomFloat(2, 9, 12),
             'notes' => fake()->paragraph(1),
-            'status' => fake()->randomElement(DailyOrderStatus::cases()),
-            'monthly_order_id' => MonthlyOrder::factory(),
+            'status' => DailyOrderStatus::PENDING,
+            'monthly_order_id' => 1,
         ];
     }
 }

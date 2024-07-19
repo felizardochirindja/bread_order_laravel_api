@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('notes');
             $table->unsignedTinyInteger('day');
             $table->enum('status', array_column(DailyOrderStatus::cases(), 'value'))->default(DailyOrderStatus::PENDING);
-            $table->foreignIdFor(DailyOrder::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(MonthlyOrder::class)->constrained()->cascadeOnDelete();
             $table->datetimes();
             $table->charset('utf8mb4');
             $table->collation('utf8mb4_0900_ai_ci');
