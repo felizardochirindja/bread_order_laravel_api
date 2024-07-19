@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\MonthlyOrder;
 use App\Models\Types\DailyOrderStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -24,6 +25,7 @@ class DailyOrderFactory extends Factory
             'product_price' => fake()->randomFloat(2, 9, 12),
             'notes' => fake()->paragraph(1),
             'status' => fake()->randomElement(DailyOrderStatus::cases()),
+            'monthly_order_id' => MonthlyOrder::factory(),
         ];
     }
 }

@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class DailyOrder extends Model
 {
-    protected $table = 'orders';
-
     protected $fillable = [
         'day',
         'total',
@@ -21,8 +20,13 @@ class DailyOrder extends Model
 
     use HasFactory;
 
-    public function monthlyOrder(): BelongsToMany
+    public function monthlyOrder(): BelongsTo
     {
-        return $this->belongsToMany(MonthlyOrder::class, 'daily_orders', 'order_id');
+        return $this->belongsTo(MonthlyOrder::class);
+    }
+
+    public function payment(): BelongsToMany
+    {
+        return $this->belongsToMany(Payment::class, 'order_payments');
     }
 }

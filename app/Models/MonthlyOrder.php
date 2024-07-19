@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class MonthlyOrder extends Model
 {
@@ -30,8 +30,8 @@ class MonthlyOrder extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public function dailyOrders(): BelongsToMany
+    public function dailyOrders(): HasMany
     {
-        return $this->belongsToMany(DailyOrder::class, 'daily_orders', relatedPivotKey: 'order_id');
+        return $this->hasMany(DailyOrder::class);
     }
 }

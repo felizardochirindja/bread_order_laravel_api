@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\DailyOrder;
 use App\Models\Payment;
 use App\Models\Types\PaymentType;
 use Illuminate\Database\Migrations\Migration;
@@ -25,9 +26,7 @@ return new class extends Migration
         });
 
         Schema::create('order_payments', function (Blueprint $table) {
-            $table->bigIncrements('id')->primary();
-            $table->unsignedBigInteger('daily_order_id');
-            $table->foreign('daily_order_id')->references('id')->on('daily_orders')->cascadeOnDelete();
+            $table->foreignIdFor(DailyOrder::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Payment::class)->constrained()->cascadeOnDelete();
             $table->charset('utf8mb4');
             $table->collation('utf8mb4_0900_ai_ci');

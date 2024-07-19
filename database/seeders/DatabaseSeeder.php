@@ -23,29 +23,6 @@ class DatabaseSeeder extends Seeder
         DailyOrder::factory(5)->create();
         Payment::factory(2)->create();
 
-        DB::table('daily_orders')->insert([
-            [
-                'monthly_order_id' => 1,
-                'order_id' => 1,
-            ],
-            [
-                'monthly_order_id' => 1,
-                'order_id' => 2,
-            ],
-            [
-                'monthly_order_id' => 1,
-                'order_id' => 3,
-            ],
-            [
-                'monthly_order_id' => 1,
-                'order_id' => 4,
-            ],
-            [
-                'monthly_order_id' => 1,
-                'order_id' => 5,
-            ],
-        ]);
-
         DB::table('order_payments')->insert([
             [
                 'daily_order_id' => 1,
