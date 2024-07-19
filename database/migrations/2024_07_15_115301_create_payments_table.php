@@ -28,6 +28,7 @@ return new class extends Migration
         Schema::create('order_payments', function (Blueprint $table) {
             $table->foreignIdFor(DailyOrder::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Payment::class)->constrained()->cascadeOnDelete();
+            $table->primary(['daily_order_id', 'payment_id']);
             $table->charset('utf8mb4');
             $table->collation('utf8mb4_0900_ai_ci');
         });
