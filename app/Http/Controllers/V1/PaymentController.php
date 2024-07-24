@@ -5,7 +5,6 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\ListDailyOrdersResource;
 use App\Http\Resources\V1\ShowPaymentResource;
-use App\Models\MonthlyOrder;
 use App\Models\Payment;
 
 class PaymentController extends Controller
@@ -21,11 +20,6 @@ class PaymentController extends Controller
         ];
     }
 
-    public function listByMonthlyOrderId(string $monthlyOrderId)
-    {
-        $monthlyOrder = MonthlyOrder::findOrFail($monthlyOrderId);
-    }
-
     public function listDailyOrders(string $paymentId)
     {
         $payment = Payment::findOrFail($paymentId);
@@ -34,7 +28,7 @@ class PaymentController extends Controller
         return new ListDailyOrdersResource($dailyOrders);
     }
 
-    public function makePeriodicPayment()
+    public function storePeriodicPayment()
     {
         
     }

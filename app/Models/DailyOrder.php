@@ -28,6 +28,6 @@ class DailyOrder extends Model
 
     public function payment(): BelongsToMany
     {
-        return $this->belongsToMany(Payment::class, 'order_payments');
+        return $this->belongsToMany(Payment::class, 'order_payments', );
     }
 }
