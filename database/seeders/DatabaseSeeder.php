@@ -7,6 +7,7 @@ use App\Models\Month;
 use App\Models\MonthlyOrder;
 use App\Models\Payment;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::factory(2)->create();
         Product::factory(1)->create();
         Month::factory(11)->create();
         MonthlyOrder::factory(1)->create();

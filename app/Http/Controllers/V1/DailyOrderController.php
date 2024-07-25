@@ -21,7 +21,7 @@ class DailyOrderController extends Controller
     ) {
     }
 
-    public function index()
+    public function index() 
     {
         return new ListDailyOrdersResource(DailyOrder::paginate());
     }
