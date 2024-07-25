@@ -37,7 +37,11 @@ class DailyOrderController extends Controller
 
     public function store(StoreDailyOrderRequest $request)
     {
-        $dailyOrder = $this->dailyOrderService->storeDailyOrder($request->quantity, $request->productId, $request->notes);
+        $dailyOrder = $this->dailyOrderService->storeDailyOrder(
+            $request->quantity,
+            $request->productId,
+            $request->notes
+        );
 
         return response([
             'status' => 'OK',
@@ -48,7 +52,12 @@ class DailyOrderController extends Controller
 
     public function storeImmediatePaymentOrder(StoreDailyOrderRequest $request)
     {
-        $dailyOrder = $this->dailyOrderService->storeDailyOrder($request->quantity, $request->productId, $request->notes, true);
+        $dailyOrder = $this->dailyOrderService->storeDailyOrder(
+            $request->quantity,
+            $request->productId,
+            $request->notes,
+            true
+        );
 
         $paymentData = [
             'total' => $dailyOrder->total,
