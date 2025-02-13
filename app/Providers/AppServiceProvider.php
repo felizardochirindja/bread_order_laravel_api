@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Tymon\JWTAuth\Providers\LaravelServiceProvider;
 
@@ -22,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        DB::prohibitDestructiveCommands(
+            app()->isProduction()
+        );
     }
 }
