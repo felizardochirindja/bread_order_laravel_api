@@ -8,6 +8,7 @@ use App\Http\Resources\V1\ListMonthlyOrdersResource;
 use App\Http\Resources\V1\ListPaymentsResource;
 use App\Http\Resources\V1\ShowMonthlyOrderResource;
 use App\Models\MonthlyOrder;
+use Illuminate\Support\Facades\Log;
 
 class MonthlyOrderController extends Controller
 {
@@ -20,6 +21,8 @@ class MonthlyOrderController extends Controller
     {
         $monthlyOrder = MonthlyOrder::findOrFail($id);
 
+        Log::channel('daily')->info('read monthly order');
+
         return [
             'status' => 'OK',
             'message' => 'monthly order read successfully',
@@ -31,6 +34,9 @@ class MonthlyOrderController extends Controller
     {
         $monthlyOrder = MonthlyOrder::findOrFail($monthlyOrderId);
         $dailyOrders = $monthlyOrder->dailyOrders()->paginate();
+
+        Log::channel('daily')->info('list daily orders by monthly order id');
+
         return new ListDailyOrdersResource($dailyOrders);
     }
 
@@ -45,10 +51,6 @@ class MonthlyOrderController extends Controller
             ->flatten()
             ->unique('id');
 
-        return [
-            'status' => 'OK',
-            'message' => 'payments read successfully',
-            'data' => new ListPaymentsResource($payments),
-        ];
+        return new ListPaymentsResource($payments);
     }
 }

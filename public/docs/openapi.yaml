@@ -1,0 +1,1876 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /api/v1/daily-orders:
+    get:
+      summary: ''
+      operationId: getApiV1DailyOrders
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: OK
+                  message: 'daily orders read successfully'
+                  data:
+                    -
+                      id: 1
+                      total: '67.31'
+                      quantity: 1
+                      productPrice: 10.29
+                      notes: 'Dicta qui debitis quidem praesentium earum.'
+                      day: 15
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    -
+                      id: 2
+                      total: '80.25'
+                      quantity: 8
+                      productPrice: 10.01
+                      notes: 'Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.'
+                      day: 4
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    -
+                      id: 3
+                      total: '61.11'
+                      quantity: 3
+                      productPrice: 9.79
+                      notes: 'Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.'
+                      day: 26
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    -
+                      id: 4
+                      total: '44.69'
+                      quantity: 6
+                      productPrice: 11.36
+                      notes: 'Assumenda vero nemo tempore quasi. Eveniet omnis aperiam culpa voluptate earum.'
+                      day: 1
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    -
+                      id: 5
+                      total: '88.00'
+                      quantity: 9
+                      productPrice: 11.93
+                      notes: 'Expedita doloribus autem et aut suscipit cumque.'
+                      day: 13
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                  links:
+                    first: 'http://localhost:8000/api/v1/daily-orders?page=1'
+                    last: 'http://localhost:8000/api/v1/daily-orders?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/v1/daily-orders?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost:8000/api/v1/daily-orders'
+                    per_page: 15
+                    to: 5
+                    total: 5
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  message:
+                    type: string
+                    example: 'daily orders read successfully'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        total: '67.31'
+                        quantity: 1
+                        productPrice: 10.29
+                        notes: 'Dicta qui debitis quidem praesentium earum.'
+                        day: 15
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                      -
+                        id: 2
+                        total: '80.25'
+                        quantity: 8
+                        productPrice: 10.01
+                        notes: 'Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.'
+                        day: 4
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                      -
+                        id: 3
+                        total: '61.11'
+                        quantity: 3
+                        productPrice: 9.79
+                        notes: 'Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.'
+                        day: 26
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                      -
+                        id: 4
+                        total: '44.69'
+                        quantity: 6
+                        productPrice: 11.36
+                        notes: 'Assumenda vero nemo tempore quasi. Eveniet omnis aperiam culpa voluptate earum.'
+                        day: 1
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                      -
+                        id: 5
+                        total: '88.00'
+                        quantity: 9
+                        productPrice: 11.93
+                        notes: 'Expedita doloribus autem et aut suscipit cumque.'
+                        day: 13
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        total:
+                          type: string
+                          example: '67.31'
+                        quantity:
+                          type: integer
+                          example: 1
+                        productPrice:
+                          type: number
+                          example: 10.29
+                        notes:
+                          type: string
+                          example: 'Dicta qui debitis quidem praesentium earum.'
+                        day:
+                          type: integer
+                          example: 15
+                        status:
+                          type: string
+                          example: pending
+                        monthlyOrder:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            year:
+                              type: integer
+                              example: 1979
+                            total:
+                              type: number
+                              example: 1331.84
+                            remain:
+                              type: number
+                              example: 312.77
+                            status:
+                              type: string
+                              example: pending
+                            month:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 12
+                                name:
+                                  type: string
+                                  example: June
+                            product:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 2
+                                name:
+                                  type: string
+                                  example: in
+                                price:
+                                  type: number
+                                  example: 11.61
+                                description:
+                                  type: string
+                                  example: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/daily-orders?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/daily-orders?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/v1/daily-orders?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/daily-orders'
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 5
+                      total:
+                        type: integer
+                        example: 5
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1DailyOrders
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productId:
+                  type: number
+                  description: ''
+                  example: 715.8
+                quantity:
+                  type: number
+                  description: ''
+                  example: 974.4734083
+                notes:
+                  type: string
+                  description: ''
+                  example: culpa
+              required:
+                - productId
+                - quantity
+                - notes
+      security: []
+  '/api/v1/daily-orders/{}':
+    get:
+      summary: ''
+      operationId: getApiV1DailyOrders
+      description: ''
+      parameters: []
+      responses:
+        405:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The GET method is not supported for route api/v1/daily-orders/1. Supported methods: PUT.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The GET method is not supported for route api/v1/daily-orders/1. Supported methods: PUT.'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: ''
+        description: ''
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/daily-orders/imediate-payment:
+    post:
+      summary: ''
+      operationId: postApiV1DailyOrdersImediatePayment
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productId:
+                  type: number
+                  description: ''
+                  example: 742.21735
+                quantity:
+                  type: number
+                  description: ''
+                  example: 87551.0
+                notes:
+                  type: string
+                  description: ''
+                  example: eum
+              required:
+                - productId
+                - quantity
+                - notes
+      security: []
+  '/api/v1/daily-orders/{id}':
+    put:
+      summary: ''
+      operationId: putApiV1DailyOrdersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quantity:
+                  type: number
+                  description: ''
+                  example: 1997296.1211623
+                notes:
+                  type: string
+                  description: ''
+                  example: a
+              required:
+                - quantity
+                - notes
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the daily order.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/monthly-orders:
+    get:
+      summary: ''
+      operationId: getApiV1MonthlyOrders
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: OK
+                  message: 'monthly orders read successfully'
+                  data:
+                    -
+                      id: 1
+                      year: 1979
+                      total: 1331.84
+                      remain: 312.77
+                      status: pending
+                      month:
+                        id: 12
+                        name: June
+                      product:
+                        id: 2
+                        name: in
+                        price: 11.61
+                        description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                  links:
+                    first: 'http://localhost:8000/api/v1/monthly-orders?page=1'
+                    last: 'http://localhost:8000/api/v1/monthly-orders?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/v1/monthly-orders?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost:8000/api/v1/monthly-orders'
+                    per_page: 15
+                    to: 1
+                    total: 1
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  message:
+                    type: string
+                    example: 'monthly orders read successfully'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        year:
+                          type: integer
+                          example: 1979
+                        total:
+                          type: number
+                          example: 1331.84
+                        remain:
+                          type: number
+                          example: 312.77
+                        status:
+                          type: string
+                          example: pending
+                        month:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 12
+                            name:
+                              type: string
+                              example: June
+                        product:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 2
+                            name:
+                              type: string
+                              example: in
+                            price:
+                              type: number
+                              example: 11.61
+                            description:
+                              type: string
+                              example: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/monthly-orders?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/monthly-orders?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/v1/monthly-orders?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/monthly-orders'
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 1
+                      total:
+                        type: integer
+                        example: 1
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/monthly-orders/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1MonthlyOrdersId
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: OK
+                  message: 'monthly order read successfully'
+                  data:
+                    id: 1
+                    year: 1979
+                    total: 1331.84
+                    remain: 312.77
+                    status: pending
+                    month:
+                      id: 12
+                      name: June
+                    product:
+                      id: 2
+                      name: in
+                      price: 11.61
+                      description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  message:
+                    type: string
+                    example: 'monthly order read successfully'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      year:
+                        type: integer
+                        example: 1979
+                      total:
+                        type: number
+                        example: 1331.84
+                      remain:
+                        type: number
+                        example: 312.77
+                      status:
+                        type: string
+                        example: pending
+                      month:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 12
+                          name:
+                            type: string
+                            example: June
+                      product:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 2
+                          name:
+                            type: string
+                            example: in
+                          price:
+                            type: number
+                            example: 11.61
+                          description:
+                            type: string
+                            example: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the monthly order.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/monthly-orders/{id}/daily-orders':
+    get:
+      summary: ''
+      operationId: getApiV1MonthlyOrdersIdDailyOrders
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: OK
+                  message: 'daily orders read successfully'
+                  data:
+                    -
+                      id: 1
+                      total: '67.31'
+                      quantity: 1
+                      productPrice: 10.29
+                      notes: 'Dicta qui debitis quidem praesentium earum.'
+                      day: 15
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    -
+                      id: 2
+                      total: '80.25'
+                      quantity: 8
+                      productPrice: 10.01
+                      notes: 'Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.'
+                      day: 4
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    -
+                      id: 3
+                      total: '61.11'
+                      quantity: 3
+                      productPrice: 9.79
+                      notes: 'Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.'
+                      day: 26
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    -
+                      id: 4
+                      total: '44.69'
+                      quantity: 6
+                      productPrice: 11.36
+                      notes: 'Assumenda vero nemo tempore quasi. Eveniet omnis aperiam culpa voluptate earum.'
+                      day: 1
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    -
+                      id: 5
+                      total: '88.00'
+                      quantity: 9
+                      productPrice: 11.93
+                      notes: 'Expedita doloribus autem et aut suscipit cumque.'
+                      day: 13
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                  links:
+                    first: 'http://localhost:8000/api/v1/monthly-orders/1/daily-orders?page=1'
+                    last: 'http://localhost:8000/api/v1/monthly-orders/1/daily-orders?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/v1/monthly-orders/1/daily-orders?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost:8000/api/v1/monthly-orders/1/daily-orders'
+                    per_page: 15
+                    to: 5
+                    total: 5
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  message:
+                    type: string
+                    example: 'daily orders read successfully'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        total: '67.31'
+                        quantity: 1
+                        productPrice: 10.29
+                        notes: 'Dicta qui debitis quidem praesentium earum.'
+                        day: 15
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                      -
+                        id: 2
+                        total: '80.25'
+                        quantity: 8
+                        productPrice: 10.01
+                        notes: 'Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.'
+                        day: 4
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                      -
+                        id: 3
+                        total: '61.11'
+                        quantity: 3
+                        productPrice: 9.79
+                        notes: 'Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.'
+                        day: 26
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                      -
+                        id: 4
+                        total: '44.69'
+                        quantity: 6
+                        productPrice: 11.36
+                        notes: 'Assumenda vero nemo tempore quasi. Eveniet omnis aperiam culpa voluptate earum.'
+                        day: 1
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                      -
+                        id: 5
+                        total: '88.00'
+                        quantity: 9
+                        productPrice: 11.93
+                        notes: 'Expedita doloribus autem et aut suscipit cumque.'
+                        day: 13
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        total:
+                          type: string
+                          example: '67.31'
+                        quantity:
+                          type: integer
+                          example: 1
+                        productPrice:
+                          type: number
+                          example: 10.29
+                        notes:
+                          type: string
+                          example: 'Dicta qui debitis quidem praesentium earum.'
+                        day:
+                          type: integer
+                          example: 15
+                        status:
+                          type: string
+                          example: pending
+                        monthlyOrder:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            year:
+                              type: integer
+                              example: 1979
+                            total:
+                              type: number
+                              example: 1331.84
+                            remain:
+                              type: number
+                              example: 312.77
+                            status:
+                              type: string
+                              example: pending
+                            month:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 12
+                                name:
+                                  type: string
+                                  example: June
+                            product:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 2
+                                name:
+                                  type: string
+                                  example: in
+                                price:
+                                  type: number
+                                  example: 11.61
+                                description:
+                                  type: string
+                                  example: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/monthly-orders/1/daily-orders?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/monthly-orders/1/daily-orders?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/v1/monthly-orders/1/daily-orders?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/monthly-orders/1/daily-orders'
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 5
+                      total:
+                        type: integer
+                        example: 5
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the monthly order.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/monthly-orders/{id}/payments':
+    get:
+      summary: ''
+      operationId: getApiV1MonthlyOrdersIdPayments
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: OK
+                  message: 'payments read successfully'
+                  data:
+                    status: OK
+                    message: 'payments read successfully'
+                    data:
+                      '0':
+                        id: 1
+                        total: '590.23'
+                        paidAt: '2014-01-27'
+                        type: imediate
+                        notes: 'Dolorem aliquid quis temporibus deserunt harum numquam. Sed voluptatem laborum veritatis harum incidunt sit laboriosam delectus.'
+                      '3':
+                        id: 2
+                        total: '318.32'
+                        paidAt: '2018-07-15'
+                        type: imediate
+                        notes: 'Eius omnis sunt omnis non.'
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  message:
+                    type: string
+                    example: 'payments read successfully'
+                  data:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                        example: OK
+                      message:
+                        type: string
+                        example: 'payments read successfully'
+                      data:
+                        type: object
+                        properties:
+                          0:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 1
+                              total:
+                                type: string
+                                example: '590.23'
+                              paidAt:
+                                type: string
+                                example: '2014-01-27'
+                              type:
+                                type: string
+                                example: imediate
+                              notes:
+                                type: string
+                                example: 'Dolorem aliquid quis temporibus deserunt harum numquam. Sed voluptatem laborum veritatis harum incidunt sit laboriosam delectus.'
+                          3:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 2
+                              total:
+                                type: string
+                                example: '318.32'
+                              paidAt:
+                                type: string
+                                example: '2018-07-15'
+                              type:
+                                type: string
+                                example: imediate
+                              notes:
+                                type: string
+                                example: 'Eius omnis sunt omnis non.'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the monthly order.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/payments/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1PaymentsId
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: OK
+                  message: 'payment read successfully'
+                  data:
+                    id: 1
+                    total: '590.23'
+                    paidAt: '2014-01-27'
+                    type: imediate
+                    notes: 'Dolorem aliquid quis temporibus deserunt harum numquam. Sed voluptatem laborum veritatis harum incidunt sit laboriosam delectus.'
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  message:
+                    type: string
+                    example: 'payment read successfully'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      total:
+                        type: string
+                        example: '590.23'
+                      paidAt:
+                        type: string
+                        example: '2014-01-27'
+                      type:
+                        type: string
+                        example: imediate
+                      notes:
+                        type: string
+                        example: 'Dolorem aliquid quis temporibus deserunt harum numquam. Sed voluptatem laborum veritatis harum incidunt sit laboriosam delectus.'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the payment.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/payments/{id}/daily-orders':
+    get:
+      summary: ''
+      operationId: getApiV1PaymentsIdDailyOrders
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: OK
+                  message: 'daily orders read successfully'
+                  data:
+                    -
+                      id: 1
+                      total: '67.31'
+                      quantity: 1
+                      productPrice: 10.29
+                      notes: 'Dicta qui debitis quidem praesentium earum.'
+                      day: 15
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    -
+                      id: 2
+                      total: '80.25'
+                      quantity: 8
+                      productPrice: 10.01
+                      notes: 'Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.'
+                      day: 4
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    -
+                      id: 3
+                      total: '61.11'
+                      quantity: 3
+                      productPrice: 9.79
+                      notes: 'Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.'
+                      day: 26
+                      status: pending
+                      monthlyOrder:
+                        id: 1
+                        year: 1979
+                        total: 1331.84
+                        remain: 312.77
+                        status: pending
+                        month:
+                          id: 12
+                          name: June
+                        product:
+                          id: 2
+                          name: in
+                          price: 11.61
+                          description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                  links:
+                    first: 'http://localhost:8000/api/v1/payments/1/daily-orders?page=1'
+                    last: 'http://localhost:8000/api/v1/payments/1/daily-orders?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/v1/payments/1/daily-orders?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost:8000/api/v1/payments/1/daily-orders'
+                    per_page: 15
+                    to: 3
+                    total: 3
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  message:
+                    type: string
+                    example: 'daily orders read successfully'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        total: '67.31'
+                        quantity: 1
+                        productPrice: 10.29
+                        notes: 'Dicta qui debitis quidem praesentium earum.'
+                        day: 15
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                      -
+                        id: 2
+                        total: '80.25'
+                        quantity: 8
+                        productPrice: 10.01
+                        notes: 'Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.'
+                        day: 4
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                      -
+                        id: 3
+                        total: '61.11'
+                        quantity: 3
+                        productPrice: 9.79
+                        notes: 'Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.'
+                        day: 26
+                        status: pending
+                        monthlyOrder:
+                          id: 1
+                          year: 1979
+                          total: 1331.84
+                          remain: 312.77
+                          status: pending
+                          month:
+                            id: 12
+                            name: June
+                          product:
+                            id: 2
+                            name: in
+                            price: 11.61
+                            description: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        total:
+                          type: string
+                          example: '67.31'
+                        quantity:
+                          type: integer
+                          example: 1
+                        productPrice:
+                          type: number
+                          example: 10.29
+                        notes:
+                          type: string
+                          example: 'Dicta qui debitis quidem praesentium earum.'
+                        day:
+                          type: integer
+                          example: 15
+                        status:
+                          type: string
+                          example: pending
+                        monthlyOrder:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            year:
+                              type: integer
+                              example: 1979
+                            total:
+                              type: number
+                              example: 1331.84
+                            remain:
+                              type: number
+                              example: 312.77
+                            status:
+                              type: string
+                              example: pending
+                            month:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 12
+                                name:
+                                  type: string
+                                  example: June
+                            product:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 2
+                                name:
+                                  type: string
+                                  example: in
+                                price:
+                                  type: number
+                                  example: 11.61
+                                description:
+                                  type: string
+                                  example: 'Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/payments/1/daily-orders?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/payments/1/daily-orders?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/v1/payments/1/daily-orders?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/payments/1/daily-orders'
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 3
+                      total:
+                        type: integer
+                        example: 3
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the payment.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/users/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1UsersId
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: 'access token not found'
+                properties:
+                  status:
+                    type: string
+                    example: 'access token not found'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: expedita
+        required: true
+        schema:
+          type: string
+  /api/v1/users/create:
+    post:
+      summary: ''
+      operationId: postApiV1UsersCreate
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/users/update:
+    put:
+      summary: ''
+      operationId: putApiV1UsersUpdate
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/login:
+    post:
+      summary: ''
+      operationId: postApiV1AuthLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/logout:
+    get:
+      summary: ''
+      operationId: getApiV1AuthLogout
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: 'access token not found'
+                properties:
+                  status:
+                    type: string
+                    example: 'access token not found'
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/refresh:
+    get:
+      summary: ''
+      operationId: getApiV1AuthRefresh
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: 'access token not found'
+                properties:
+                  status:
+                    type: string
+                    example: 'access token not found'
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/me:
+    get:
+      summary: ''
+      operationId: getApiV1AuthMe
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: OK
+                  message: ''
+                  data: null
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  message:
+                    type: string
+                    example: ''
+                  data:
+                    type: string
+                    example: null
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''

@@ -9,37 +9,46 @@ use App\Http\Middleware\V1\AuthMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\V1'], function () {
-    Route::prefix('daily-orders')->group(function () {
-        Route::apiResource('', DailyOrderController::class)->except([
-            'update'
-        ]);
-        Route::post('imediate-payment', [DailyOrderController::class, 'storeImmediatePaymentOrder']);
-        Route::put('{id}', [DailyOrderController::class, 'update']);
+    Route::prefix('daily-orders')->middleware(AuthMiddleware::class)->group(function () {
+        Route::post('', [DailyOrderController::class, 'store']);
+        Route::post('imediate-payment', [DailyOrderController::class, 'storeImmediatePayment']);
+
+        Route::prefix('{id}')->group(function() {
+            Route::put('', [DailyOrderController::class, 'update']);
+            Route::get('', [DailyOrderController::class, 'show']);
+        });
     });
 
-    Route::prefix('monthly-orders')->group(function () {
+    Route::prefix('monthly-orders')->middleware(AuthMiddleware::class)->group(function () {
         Route::get('', [MonthlyOrderController::class, 'index']);
-        Route::get('{id}', [MonthlyOrderController::class, 'show']);
-        Route::get('{id}/daily-orders', [MonthlyOrderController::class, 'listDailyOrders']);
-        Route::get('{id}/payments', [MonthlyOrderController::class, 'listPayments']);
+
+        Route::prefix('{id}')->group(function() {
+            Route::get('', [MonthlyOrderController::class, 'show']);
+            Route::get('daily-orders', [MonthlyOrderController::class, 'listDailyOrders']);
+            Route::get('payments', [MonthlyOrderController::class, 'listPayments']);
+        });
     });
 
-    Route::prefix('payments')->group(function () {
-        Route::get('{id}', [PaymentController::class, 'show']);
-        Route::get('{id}/daily-orders', [PaymentController::class, 'listDailyOrders']);
+    Route::prefix('payments')->middleware(AuthMiddleware::class)->group(function () {
+        Route::post('periodic', [PaymentController::class, 'storePeriodicPayment']);
+        
+        Route::prefix('{id}')->group(function() {
+            Route::get('', [PaymentController::class, 'show']);
+            Route::get('daily-orders', [PaymentController::class, 'listDailyOrders']);
+        });
     });
 
-    Route::group(['prefix' => 'users', 'middleware' => AuthMiddleware::class], function () {
+    Route::prefix('users')->middleware(AuthMiddleware::class)->group(function () {
         Route::get('', [UserController::class, 'index']);
         Route::get('{id}', [UserController::class, 'show']);
-        Route::get('create', [UserController::class, 'store']);
-        Route::get('update', [UserController::class, 'update']);
+        Route::put('update', [UserController::class, 'update']);
     });
 
     Route::group(['prefix' => 'auth'], function () {
-        Route::get('login', [AuthController::class, 'login']);
+        Route::post('login', [AuthController::class, 'login']);
+        Route::post('sign-up', [AuthController::class, 'signUp']);
         Route::get('logout', [AuthController::class, 'logout'])->middleware(AuthMiddleware::class);
         Route::get('refresh', [AuthController::class, 'refresh'])->middleware(AuthMiddleware::class);
-        Route::get('me', [AuthController::class, 'me']);
+        Route::get('me', [AuthController::class, 'me'])->middleware(AuthMiddleware::class);
     });
 });

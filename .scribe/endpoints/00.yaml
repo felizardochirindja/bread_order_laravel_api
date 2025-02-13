@@ -1,0 +1,815 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/daily-orders
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"OK","message":"daily orders read successfully","data":[{"id":1,"total":"67.31","quantity":1,"productPrice":10.29,"notes":"Dicta qui debitis quidem praesentium earum.","day":15,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}},{"id":2,"total":"80.25","quantity":8,"productPrice":10.01,"notes":"Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.","day":4,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}},{"id":3,"total":"61.11","quantity":3,"productPrice":9.79,"notes":"Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.","day":26,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}},{"id":4,"total":"44.69","quantity":6,"productPrice":11.36,"notes":"Assumenda vero nemo tempore quasi. Eveniet omnis aperiam culpa voluptate earum.","day":1,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}},{"id":5,"total":"88.00","quantity":9,"productPrice":11.93,"notes":"Expedita doloribus autem et aut suscipit cumque.","day":13,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}}],"links":{"first":"http:\/\/localhost:8000\/api\/v1\/daily-orders?page=1","last":"http:\/\/localhost:8000\/api\/v1\/daily-orders?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/v1\/daily-orders?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/v1\/daily-orders","per_page":15,"to":5,"total":5}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/daily-orders
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      productId:
+        name: productId
+        description: ''
+        required: true
+        example: 715.8
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      quantity:
+        name: quantity
+        description: ''
+        required: true
+        example: 974.4734083
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      notes:
+        name: notes
+        description: ''
+        required: true
+        example: culpa
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      productId: 715.8
+      quantity: 974.4734083
+      notes: culpa
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/daily-orders/{}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      '':
+        name: ''
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      '': 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 405
+        content: |-
+          {
+              "message": "The GET method is not supported for route api/v1/daily-orders/1. Supported methods: PUT."
+          }
+        headers:
+          allow: PUT
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/daily-orders/imediate-payment
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      productId:
+        name: productId
+        description: ''
+        required: true
+        example: 742.21735
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      quantity:
+        name: quantity
+        description: ''
+        required: true
+        example: 87551.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      notes:
+        name: notes
+        description: ''
+        required: true
+        example: eum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      productId: 742.21735
+      quantity: 87551.0
+      notes: eum
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/daily-orders/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the daily order.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      quantity:
+        name: quantity
+        description: ''
+        required: true
+        example: 1997296.1211623
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      notes:
+        name: notes
+        description: ''
+        required: true
+        example: a
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      quantity: 1997296.1211623
+      notes: a
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/monthly-orders
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"OK","message":"monthly orders read successfully","data":[{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}],"links":{"first":"http:\/\/localhost:8000\/api\/v1\/monthly-orders?page=1","last":"http:\/\/localhost:8000\/api\/v1\/monthly-orders?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/v1\/monthly-orders?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/v1\/monthly-orders","per_page":15,"to":1,"total":1}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/monthly-orders/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the monthly order.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"OK","message":"monthly order read successfully","data":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/monthly-orders/{id}/daily-orders'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the monthly order.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"OK","message":"daily orders read successfully","data":[{"id":1,"total":"67.31","quantity":1,"productPrice":10.29,"notes":"Dicta qui debitis quidem praesentium earum.","day":15,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}},{"id":2,"total":"80.25","quantity":8,"productPrice":10.01,"notes":"Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.","day":4,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}},{"id":3,"total":"61.11","quantity":3,"productPrice":9.79,"notes":"Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.","day":26,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}},{"id":4,"total":"44.69","quantity":6,"productPrice":11.36,"notes":"Assumenda vero nemo tempore quasi. Eveniet omnis aperiam culpa voluptate earum.","day":1,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}},{"id":5,"total":"88.00","quantity":9,"productPrice":11.93,"notes":"Expedita doloribus autem et aut suscipit cumque.","day":13,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}}],"links":{"first":"http:\/\/localhost:8000\/api\/v1\/monthly-orders\/1\/daily-orders?page=1","last":"http:\/\/localhost:8000\/api\/v1\/monthly-orders\/1\/daily-orders?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/v1\/monthly-orders\/1\/daily-orders?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/v1\/monthly-orders\/1\/daily-orders","per_page":15,"to":5,"total":5}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/monthly-orders/{id}/payments'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the monthly order.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"OK","message":"payments read successfully","data":{"status":"OK","message":"payments read successfully","data":{"0":{"id":1,"total":"590.23","paidAt":"2014-01-27","type":"imediate","notes":"Dolorem aliquid quis temporibus deserunt harum numquam. Sed voluptatem laborum veritatis harum incidunt sit laboriosam delectus."},"3":{"id":2,"total":"318.32","paidAt":"2018-07-15","type":"imediate","notes":"Eius omnis sunt omnis non."}}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/payments/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the payment.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"OK","message":"payment read successfully","data":{"id":1,"total":"590.23","paidAt":"2014-01-27","type":"imediate","notes":"Dolorem aliquid quis temporibus deserunt harum numquam. Sed voluptatem laborum veritatis harum incidunt sit laboriosam delectus."}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/payments/{id}/daily-orders'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the payment.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"OK","message":"daily orders read successfully","data":[{"id":1,"total":"67.31","quantity":1,"productPrice":10.29,"notes":"Dicta qui debitis quidem praesentium earum.","day":15,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}},{"id":2,"total":"80.25","quantity":8,"productPrice":10.01,"notes":"Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.","day":4,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}},{"id":3,"total":"61.11","quantity":3,"productPrice":9.79,"notes":"Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.","day":26,"status":"pending","monthlyOrder":{"id":1,"year":1979,"total":1331.84,"remain":312.77,"status":"pending","month":{"id":12,"name":"June"},"product":{"id":2,"name":"in","price":11.61,"description":"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum."}}}],"links":{"first":"http:\/\/localhost:8000\/api\/v1\/payments\/1\/daily-orders?page=1","last":"http:\/\/localhost:8000\/api\/v1\/payments\/1\/daily-orders?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/v1\/payments\/1\/daily-orders?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/v1\/payments\/1\/daily-orders","per_page":15,"to":3,"total":3}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/users/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: expedita
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: expedita
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"access token not found"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/users/create
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/v1/users/update
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/login
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/auth/logout
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"access token not found"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/auth/refresh
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"access token not found"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/auth/me
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"status":"OK","message":"","data":null}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

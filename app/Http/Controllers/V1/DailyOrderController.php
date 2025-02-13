@@ -13,21 +13,26 @@ use App\Models\Types\PaymentType;
 use App\Services\DailyOrderService;
 use DateTime;
 use Illuminate\Http\Response as HttpResponse;
+use Illuminate\Support\Facades\Log;
 
 class DailyOrderController extends Controller
 {
     public function __construct(
         private DailyOrderService $dailyOrderService,
-    ) {
-    }
+    ) {}
 
-    public function index() 
+    public function index()
     {
+        Log::channel('daily')->info('list daily orders');
         return new ListDailyOrdersResource(DailyOrder::paginate());
     }
 
-    public function show(DailyOrder $dailyOrder)
+    public function show(string $id)
     {
+        $dailyOrder = DailyOrder::findOrFail($id);
+
+        Log::channel('daily')->info('read daily order by id');
+
         return response([
             'status' => 'OK',
             'message' => 'daily order read successfully',
@@ -50,7 +55,7 @@ class DailyOrderController extends Controller
         ], HttpResponse::HTTP_CREATED);
     }
 
-    public function storeImmediatePaymentOrder(StoreDailyOrderRequest $request)
+    public function storeImmediatePayment(StoreDailyOrderRequest $request)
     {
         $dailyOrder = $this->dailyOrderService->storeDailyOrder(
             $request->quantity,

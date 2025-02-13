@@ -1,0 +1,849 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost:8000"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "26a8a937-9552-4cca-b0b5-bebb0939e85b",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/v1\/daily-orders",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/daily-orders",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/daily-orders"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"OK\",\"message\":\"daily orders read successfully\",\"data\":[{\"id\":1,\"total\":\"67.31\",\"quantity\":1,\"productPrice\":10.29,\"notes\":\"Dicta qui debitis quidem praesentium earum.\",\"day\":15,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}},{\"id\":2,\"total\":\"80.25\",\"quantity\":8,\"productPrice\":10.01,\"notes\":\"Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.\",\"day\":4,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}},{\"id\":3,\"total\":\"61.11\",\"quantity\":3,\"productPrice\":9.79,\"notes\":\"Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.\",\"day\":26,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}},{\"id\":4,\"total\":\"44.69\",\"quantity\":6,\"productPrice\":11.36,\"notes\":\"Assumenda vero nemo tempore quasi. Eveniet omnis aperiam culpa voluptate earum.\",\"day\":1,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}},{\"id\":5,\"total\":\"88.00\",\"quantity\":9,\"productPrice\":11.93,\"notes\":\"Expedita doloribus autem et aut suscipit cumque.\",\"day\":13,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/daily-orders?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/daily-orders?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/daily-orders?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/daily-orders\",\"per_page\":15,\"to\":5,\"total\":5}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/v1\/daily-orders",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/daily-orders",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/daily-orders"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"productId\":715.8,\"quantity\":974.4734083,\"notes\":\"culpa\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/v1\/daily-orders\/{}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/daily-orders\/{}",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/daily-orders\/{}",
+                            "variable": [
+                                {
+                                    "id": "",
+                                    "key": "",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "allow",
+                                    "value": "PUT"
+                                },
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 405,
+                            "body": "{\n    \"message\": \"The GET method is not supported for route api\/v1\/daily-orders\/1. Supported methods: PUT.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/v1\/daily-orders\/imediate-payment",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/daily-orders\/imediate-payment",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/daily-orders\/imediate-payment"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"productId\":742.21735,\"quantity\":87551,\"notes\":\"eum\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/v1\/daily-orders\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/daily-orders\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/daily-orders\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the daily order."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"quantity\":1997296.121162272,\"notes\":\"a\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/v1\/monthly-orders",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/monthly-orders",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/monthly-orders"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"OK\",\"message\":\"monthly orders read successfully\",\"data\":[{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/monthly-orders?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/monthly-orders?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/monthly-orders?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/monthly-orders\",\"per_page\":15,\"to\":1,\"total\":1}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v1\/monthly-orders\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/monthly-orders\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/monthly-orders\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the monthly order."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"OK\",\"message\":\"monthly order read successfully\",\"data\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v1\/monthly-orders\/{id}\/daily-orders",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/monthly-orders\/:id\/daily-orders",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/monthly-orders\/:id\/daily-orders",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the monthly order."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"OK\",\"message\":\"daily orders read successfully\",\"data\":[{\"id\":1,\"total\":\"67.31\",\"quantity\":1,\"productPrice\":10.29,\"notes\":\"Dicta qui debitis quidem praesentium earum.\",\"day\":15,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}},{\"id\":2,\"total\":\"80.25\",\"quantity\":8,\"productPrice\":10.01,\"notes\":\"Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.\",\"day\":4,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}},{\"id\":3,\"total\":\"61.11\",\"quantity\":3,\"productPrice\":9.79,\"notes\":\"Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.\",\"day\":26,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}},{\"id\":4,\"total\":\"44.69\",\"quantity\":6,\"productPrice\":11.36,\"notes\":\"Assumenda vero nemo tempore quasi. Eveniet omnis aperiam culpa voluptate earum.\",\"day\":1,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}},{\"id\":5,\"total\":\"88.00\",\"quantity\":9,\"productPrice\":11.93,\"notes\":\"Expedita doloribus autem et aut suscipit cumque.\",\"day\":13,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/monthly-orders\\\/1\\\/daily-orders?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/monthly-orders\\\/1\\\/daily-orders?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/monthly-orders\\\/1\\\/daily-orders?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/monthly-orders\\\/1\\\/daily-orders\",\"per_page\":15,\"to\":5,\"total\":5}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v1\/monthly-orders\/{id}\/payments",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/monthly-orders\/:id\/payments",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/monthly-orders\/:id\/payments",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the monthly order."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"OK\",\"message\":\"payments read successfully\",\"data\":{\"status\":\"OK\",\"message\":\"payments read successfully\",\"data\":{\"0\":{\"id\":1,\"total\":\"590.23\",\"paidAt\":\"2014-01-27\",\"type\":\"imediate\",\"notes\":\"Dolorem aliquid quis temporibus deserunt harum numquam. Sed voluptatem laborum veritatis harum incidunt sit laboriosam delectus.\"},\"3\":{\"id\":2,\"total\":\"318.32\",\"paidAt\":\"2018-07-15\",\"type\":\"imediate\",\"notes\":\"Eius omnis sunt omnis non.\"}}}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v1\/payments\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/payments\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/payments\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the payment."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"OK\",\"message\":\"payment read successfully\",\"data\":{\"id\":1,\"total\":\"590.23\",\"paidAt\":\"2014-01-27\",\"type\":\"imediate\",\"notes\":\"Dolorem aliquid quis temporibus deserunt harum numquam. Sed voluptatem laborum veritatis harum incidunt sit laboriosam delectus.\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v1\/payments\/{id}\/daily-orders",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/payments\/:id\/daily-orders",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/payments\/:id\/daily-orders",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the payment."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"OK\",\"message\":\"daily orders read successfully\",\"data\":[{\"id\":1,\"total\":\"67.31\",\"quantity\":1,\"productPrice\":10.29,\"notes\":\"Dicta qui debitis quidem praesentium earum.\",\"day\":15,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}},{\"id\":2,\"total\":\"80.25\",\"quantity\":8,\"productPrice\":10.01,\"notes\":\"Reprehenderit et ipsum soluta assumenda eos perspiciatis commodi.\",\"day\":4,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}},{\"id\":3,\"total\":\"61.11\",\"quantity\":3,\"productPrice\":9.79,\"notes\":\"Nihil non voluptatum sed dolorem inventore mollitia qui. Ut optio eum et quia est ut.\",\"day\":26,\"status\":\"pending\",\"monthlyOrder\":{\"id\":1,\"year\":1979,\"total\":1331.84,\"remain\":312.77,\"status\":\"pending\",\"month\":{\"id\":12,\"name\":\"June\"},\"product\":{\"id\":2,\"name\":\"in\",\"price\":11.61,\"description\":\"Odio aut architecto sed qui. Vero nulla natus esse eum ad ipsum.\"}}}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/payments\\\/1\\\/daily-orders?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/payments\\\/1\\\/daily-orders?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/payments\\\/1\\\/daily-orders?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/payments\\\/1\\\/daily-orders\",\"per_page\":15,\"to\":3,\"total\":3}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v1\/users\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "expedita",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"access token not found\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/v1\/users\/create",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/users\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/v1\/users\/update",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/users\/update"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/v1\/auth\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/v1\/auth\/logout",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/auth\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/auth\/logout"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"access token not found\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v1\/auth\/refresh",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/auth\/refresh",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/auth\/refresh"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"access token not found\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v1\/auth\/me",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/auth\/me",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/auth\/me"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"OK\",\"message\":\"\",\"data\":null}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

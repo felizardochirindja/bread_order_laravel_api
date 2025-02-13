@@ -16,18 +16,21 @@ class AuthMiddleware
     {
         try {
             JWTAuth::parseToken()->authenticate();
-        } catch (TokenInvalidException $e) {
-            return response()->json(
-                ['status' => 'token invalido']
-            );
+        } catch (TokenInvalidException) {
+            return response()->json([
+                'status' => 'ERROR',
+                'message' => 'invalid access token',
+            ]);
         } catch (TokenExpiredException) {
-            return response()->json(
-                ['status' => 'token expirado']
-            );
+            return response()->json([
+                'status' => 'ERROR',
+                'message' => 'expired access token',
+            ]);
         } catch (JWTException) {
-            return response()->json(
-                ['status' => 'token nao encontrado']
-            );
+            return response()->json([
+                'status' => 'ERROR',
+                'message' => 'access token not found',
+            ]);
         }
 
         return $next($request);

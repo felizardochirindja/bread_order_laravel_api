@@ -16,13 +16,13 @@ class ShowDailyOrderResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'total' => $this->total,
+            'total' => (float) $this->total,
             'quantity' => $this->quantity,
             'productPrice' => (float) $this->product_price,
             'notes' => $this->notes,
             'day' => $this->day,
             'status' => $this->status,
-            'monthlyOrder' => new ShowMonthlyOrderResource($this->monthlyOrder->first())
+            'monthlyOrder' => new ShowMonthlyOrderResource($this->monthlyOrder)
         ];
     }
 }
