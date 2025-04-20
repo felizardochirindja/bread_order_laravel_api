@@ -29,7 +29,6 @@ class DailyOrder extends Model
         return $this->belongsTo(MonthlyOrder::class);
     }
 
-
     /**
      * @return BelongsToMany<Payment>
      */
