@@ -7,6 +7,9 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
  * @mixin \App\Models\MonthlyOrder
+ * 
+ * @property \App\Models\Month $month
+ * @property \App\Models\Product $product
  */
 class ShowMonthlyOrderResource extends JsonResource
 {
