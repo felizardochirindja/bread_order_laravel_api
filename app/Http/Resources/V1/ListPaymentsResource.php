@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources\V1;
 
-use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
@@ -18,9 +17,7 @@ class ListPaymentsResource extends ResourceCollection
         return [
             'status' => 'OK',
             'message' => 'payments read successfully',
-            'data' => $this->collection->transform(function(Payment $payment) {
-                return new ShowPaymentResource($payment);
-            }),
+            'data' => ShowPaymentResource::collection($this->collection),
         ];
     }
 }

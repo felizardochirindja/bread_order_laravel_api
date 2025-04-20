@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources\V1;
 
-use App\Models\DailyOrder;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
+
 
 class ListDailyOrdersResource extends ResourceCollection
 {
@@ -18,9 +18,7 @@ class ListDailyOrdersResource extends ResourceCollection
         return [
             'status' => 'OK',
             'message' => 'daily orders read successfully',
-            'data' => $this->collection->transform(function (DailyOrder $dailyOrder) {
-                return new ShowDailyOrderResource($dailyOrder);
-            }),
+            'data' => ShowDailyOrderResource::collection($this->collection),
         ];
     }
 }

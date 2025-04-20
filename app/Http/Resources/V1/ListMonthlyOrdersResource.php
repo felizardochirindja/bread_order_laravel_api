@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources\V1;
 
-use App\Models\MonthlyOrder;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
@@ -18,9 +17,7 @@ class ListMonthlyOrdersResource extends ResourceCollection
         return [
             'status' => 'OK',
             'message' => 'monthly orders read successfully',
-            'data' => $this->collection->transform(function(MonthlyOrder $monthlyOrder) {
-                return new ShowMonthlyOrderResource($monthlyOrder);
-            }),
+            'data' => ShowMonthlyOrderResource::collection($this->collection),
         ];
     }
 }
