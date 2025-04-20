@@ -10,6 +10,9 @@ class Month extends Model
 {
     use HasFactory;
 
+    /**
+     * @return HasMany<MonthlyOrder>
+     */    
     public function monthlyOrders(): HasMany
     {
         return $this->hasMany(MonthlyOrder::class);

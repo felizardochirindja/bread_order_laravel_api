@@ -17,6 +17,9 @@ class Payment extends Model
         'notes',
     ];
 
+    /**
+     * @return BelongsToMany<DailyOrder>
+     */
     public function dailyOrders(): BelongsToMany
     {
         return $this->belongsToMany(DailyOrder::class, 'order_payments');

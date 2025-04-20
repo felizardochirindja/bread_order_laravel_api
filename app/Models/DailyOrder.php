@@ -21,11 +21,18 @@ class DailyOrder extends Model
 
     use HasFactory;
 
+    /**
+     * @return BelongsTo<MonthlyOrder, DailyOrder>
+     */
     public function monthlyOrder(): BelongsTo
     {
         return $this->belongsTo(MonthlyOrder::class);
     }
 
+
+    /**
+     * @return BelongsToMany<Payment>
+     */
     public function payment(): BelongsToMany
     {
         return $this->belongsToMany(Payment::class, 'order_payments');

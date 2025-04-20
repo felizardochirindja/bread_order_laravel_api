@@ -20,16 +20,25 @@ class MonthlyOrder extends Model
         'product_id',
     ];
 
+    /**
+     * @return BelongsTo<Month, MonthlyOrder>
+     */
     public function month(): BelongsTo
     {
         return $this->belongsTo(Month::class);
     }
 
+    /**
+     * @return BelongsTo<Product, MonthlyOrder>
+     */
     public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);
     }
 
+    /**
+     * @return HasMany<DailyOrder>
+     */
     public function dailyOrders(): HasMany
     {
         return $this->hasMany(DailyOrder::class);
